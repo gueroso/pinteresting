@@ -53,5 +53,8 @@ class PinsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def pin_params
       params.require(:pin).permit(:description, :image)
+      #relates to MODEL 'pin.rb' has_attached_file :image
+      #validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+      #do_not_validate_attachment_file_type :image
     end
 end
